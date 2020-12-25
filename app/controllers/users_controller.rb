@@ -59,6 +59,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:username, :password, :highScore, :user, :id)
+        params.permit(:username, :password, :highscore, :user, :id)
     end
 end
