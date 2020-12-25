@@ -8,9 +8,12 @@ class UsersController < ApplicationController
         render json: @users
       end
 
-    # GET /profiles/1
+    # GET /users
     def show
-        @users = User.all
+        sql = "SELECT * FROM users ORDER BY highscore DESC"
+        records_array = ActiveRecord::Base.connection.execute(sql)
+        # @users = User.all
+        @users = records_array
     
         render json: @users
     end
