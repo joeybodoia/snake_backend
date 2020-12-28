@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     # GET /users
     def show
-        sql = "SELECT * FROM users ORDER BY highscore DESC"
+        sql = "SELECT * FROM users ORDER BY highscore DESC NULLS LAST"
         records_array = ActiveRecord::Base.connection.execute(sql)
         # @users = User.all
         @users = records_array
